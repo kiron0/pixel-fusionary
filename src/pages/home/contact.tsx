@@ -42,26 +42,26 @@ export default function Contact() {
                                         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
                                                   <LabelInputContainer>
                                                             <Label htmlFor="firstName">First name</Label>
-                                                            <Input id="firstName" placeholder="Tyler" type="text" name="firstName" />
+                                                            <Input id="firstName" placeholder="First Name" type="text" name="firstName" />
                                                   </LabelInputContainer>
                                                   <LabelInputContainer>
                                                             <Label htmlFor="middleName">Last name</Label>
-                                                            <Input id="middleName" placeholder="Kerlin" type="text" name="middleName" />
+                                                            <Input id="middleName" placeholder="Middle Name" type="text" name="middleName" />
                                                   </LabelInputContainer>
                                                   <LabelInputContainer>
                                                             <Label htmlFor="lastName">Last name</Label>
-                                                            <Input id="lastName" placeholder="Durden" type="text" name="lastName" />
+                                                            <Input id="lastName" placeholder="Last Name" type="text" name="lastName" />
                                                   </LabelInputContainer>
                                         </div>
                                         <LabelInputContainer className="mb-4">
                                                   <Label htmlFor="email">Email Address</Label>
-                                                  <Input id="email" placeholder="projectmayhem@fc.com" type="email" name="email" />
+                                                  <Input id="email" type="email" name="email" placeholder="Email Address" />
                                         </LabelInputContainer>
                                         <LabelInputContainer className="mb-4">
                                                   <Label htmlFor="message">Message</Label>
                                                   <TextArea
                                                             id="message"
-                                                            placeholder="I am Jack's smirking revenge."
+                                                            placeholder="Tell us what you need help with."
                                                             typeof="text"
                                                             name="message"
                                                   />

@@ -9,7 +9,7 @@ import { Link } from "react-scroll";
 export default function Banner() {
           return (
                     <Container>
-                              <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
+                              <div className="flex flex-col-reverse lg:flex-row justify-between items-center lg:-mt-20">
                                         <div className="w-full lg:w-1/2">
                                                   <h1 className="flex flex-wrap gap-1 text-3xl sm:text-[60px] sm:leading-tight font-semibold">
                                                             <span className="text-primary">Digital Marketing</span> Agency in Bangladesh
