@@ -1,50 +1,64 @@
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
-import { cn } from "@/lib/utils";
+import { Config } from "@/config";
 import { useState } from "react";
 import { IoMdArrowForward } from "react-icons/io";
 import { RiMenu3Line } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import MobileMenu from "./mobile-menu";
 
 export type TNavLink = {
           name: string;
-          href: string;
+          link: string;
 }
 
 const navLinks = [
-          { name: "Services", href: "/services" },
-          { name: "About", href: "/about" },
-          { name: "Contact", href: "/contact" },
+          { name: "Services", link: "services" },
+          { name: "About Us", link: "about" },
+          { name: "Contact Us", link: "contact" },
 ]
 
 export default function Navbar() {
           const [isOpen, setIsOpen] = useState(false);
 
-          const pathname = window.location.pathname;
-
           return (
-                    <div>
+                    <div id="root" className="sticky top-0 bg-background z-50">
                               <div className="max-w-7xl mx-auto flex justify-between items-center h-16 sm:h-20 px-5 sm:px-7">
-                                        <Link to="/" className="flex items-center gap-2">
-                                                  <img src="/vite.svg" alt="logo" className="size-8 sm:size-10" />
+                                        <Link
+                                                  to="root"
+                                                  spy={true}
+                                                  smooth={true}
+                                                  offset={-70}
+                                                  duration={500}
+                                                  className="flex items-center gap-2 cursor-pointer"
+                                        >
+                                                  <img src={Config.logo} alt="logo" className="size-8 sm:size-9" onContextMenu={(e) => e.preventDefault()} />
                                                   <h1 className="text-xl sm:text-2xl font-bold">
-                                                            Pixel Fusionary
+                                                            {Config.title}
                                                   </h1>
                                         </Link>
                                         <div className="hidden lg:flex items-center gap-8">
                                                   {navLinks.map((link) => (
                                                             <Link
                                                                       key={link.name}
-                                                                      to={link.href}
-                                                                      className={cn(
-                                                                                "transition-all duration-300 font-medium text-lg",
-                                                                                pathname === link.href ? "text-primary" : "hover:text-primary"
-                                                                      )}
+                                                                      className="transition-all duration-300 font-medium text-lg cursor-pointer hover:text-primary"
+                                                                      activeClass="text-primary"
+                                                                      to={link.link}
+                                                                      spy={true}
+                                                                      smooth={true}
+                                                                      offset={-70}
+                                                                      duration={500}
                                                             >
                                                                       {link.name}
                                                             </Link>
                                                   ))}
-                                                  <Link to='/' className="ml-5">
+                                                  <Link
+                                                            to="services"
+                                                            spy={true}
+                                                            smooth={true}
+                                                            offset={-70}
+                                                            duration={500}
+                                                            className="ml-5"
+                                                  >
                                                             <HoverBorderGradient
                                                                       containerClassName="rounded-full"
                                                                       as="button"

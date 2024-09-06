@@ -1,13 +1,21 @@
+import About from "./about";
 import Banner from "./banner";
+import Contact from "./contact";
+import Feedback from "./feedback";
+import Footer from "./footer";
 import Navbar from "./navbar/navbar";
-import Reviews from "./reviews";
+import Services from "./services";
 
 export default function Home() {
           return (
                     <>
                               <Navbar />
                               <Banner />
-                              <Reviews />
+                              <About />
+                              <Services />
+                              <Feedback />
+                              <Contact />
+                              <Footer />
                     </>
           )
 }

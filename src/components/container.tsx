@@ -1,14 +1,14 @@
-import { ReactNode } from "react"
+import { PropsWithChildren } from "react";
 
-interface ContainerProps {
-          children: ReactNode,
-          className?: string
-}
+type ContainerProps = PropsWithChildren<JSX.IntrinsicElements["div"]>;
 
-export default function Container({ children, className }: ContainerProps) {
+export default function Container({ ...props }: ContainerProps) {
           return (
-                    <div className={`max-w-7xl mx-auto p-5 sm:p-7 ${className}`}>
-                              {children}
+                    <div
+                              className={`max-w-7xl mx-auto p-5 sm:p-7 ${props.className}`}
+                              {...props}
+                    >
+                              {props.children}
                     </div>
           )
 }

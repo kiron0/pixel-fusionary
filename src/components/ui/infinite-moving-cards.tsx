@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 
@@ -90,16 +88,18 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, i) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-muted px-8 py-6 md:w-[450px] bg-primary/75 text-primary-foreground"
+            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-muted px-8 py-6 md:w-[450px] bg-primary text-primary-foreground"
             key={i}
           >
             <blockquote>
               <div
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className=" relative z-20 text-sm leading-[1.6] font-normal">
-                {item.quote}
+              />
+              <span className="relative z-20 text-sm leading-[1.6] font-normal">
+                {item.quote.length > 200
+                  ? item.quote.slice(0, 200) + "...more"
+                  : item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">

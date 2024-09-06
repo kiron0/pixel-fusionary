@@ -74,3 +74,22 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+
+/* Disabled Number Arrow Icon in Input Field */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Reset Scrollbar */
+::-webkit-scrollbar {
+  @apply w-[0.3rem] bg-[#fff] rounded-[0.6rem];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-[#6d6c6c] rounded-[0.6rem] hover:bg-[#313131] duration-500;
+}
