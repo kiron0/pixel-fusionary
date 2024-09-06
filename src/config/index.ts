@@ -7,6 +7,7 @@ import Icon6 from "@/assets/icons/8.png";
 import Icon7 from "@/assets/icons/9.png";
 import Logo from "@/assets/logo.png";
 import Services12 from "@/assets/services/ad.webp";
+import Services from "@/assets/services/ads.jpg";
 import Services7 from "@/assets/services/am.webp";
 import Services4 from "@/assets/services/cm.png";
 import Services6 from "@/assets/services/cro.png";
@@ -15,17 +16,19 @@ import Services5 from "@/assets/services/email.jpg";
 import Services13 from "@/assets/services/gd.jpg";
 import Services8 from "@/assets/services/im.jpg";
 import Services10 from "@/assets/services/mm.jpg";
+import Services17 from "@/assets/services/music.jpg";
 import Services2 from "@/assets/services/ppc.jpeg";
 import Services1 from "@/assets/services/seo.svg";
 import Services3 from "@/assets/services/smm.jpeg";
+import Services16 from "@/assets/services/suspend.jpg";
 import Services14 from "@/assets/services/uiux.jpg";
 import Services9 from "@/assets/services/vm.jpg";
 import Services11 from "@/assets/services/wd.jpg";
 
 const logo = Logo;
-const title = "Pixel Fusionary";
+const title = "CIPROXIN LLC";
 const description =
-  "Pixel Fusionary is a digital marketing agency in Bangladesh. We provide services like SEO, SMM, PPC, Email Marketing, and more.";
+  "Ciproxin LLC is a digital marketing agency in Bangladesh. We provide services like SEO, SMM, PPC, Email Marketing, and more.";
 const sponsors = [
   {
     image: Icon1,
@@ -59,6 +62,30 @@ export type TService = {
 };
 
 const digitalServices: TService[] = [
+  {
+    title: "Music Distribution",
+    subtitle: "Get your music on major streaming platforms",
+    description:
+      "Distribute your music across platforms like Spotify, Apple Music, and YouTube. We ensure your tracks are delivered to all major streaming services, giving you maximum exposure to a global audience.",
+    image: Services17,
+    price: 150,
+  },
+  {
+    title: "Google Ads Campaign",
+    subtitle: "Run targeted ads for maximum ROI",
+    description:
+      "Create, manage, and optimize Google Ads campaigns to drive traffic and conversions. Our data-driven approach ensures that your ads are targeted to the right audience for maximum return on investment.",
+    image: Services,
+    price: 200,
+  },
+  {
+    title: "Unsuspend Ads Account",
+    subtitle: "Get your Google Ads account back online",
+    description:
+      "Resolve issues with suspended Google Ads accounts and get your campaigns back up and running. We work directly with Google to identify and fix policy violations or other issues causing the suspension.",
+    image: Services16,
+    price: 250,
+  },
   {
     title: "Search Engine Optimization (SEO)",
     subtitle: "Boost your organic search rankings",

@@ -12,8 +12,9 @@ export type TNavLink = {
 }
 
 const navLinks = [
-          { name: "Services", link: "services" },
           { name: "About Us", link: "about" },
+          { name: "Services", link: "services" },
+          { name: "Feedback", link: "feedback" },
           { name: "Contact Us", link: "contact" },
 ]
 
