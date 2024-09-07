@@ -1,21 +1,12 @@
-
 interface TitleProps {
-          title: string,
-          subtitle: string
+          title: string;
+          subtitle: string;
 }
 
 export default function Title({ title, subtitle }: TitleProps) {
-          const characters = subtitle.split(" ");
-          const firstWord = characters[0];
-          const secondWord = characters[1];
-          const thirdWord = characters[2];
-          const restOfWords = characters.slice(3).join(" ");
+          const words = subtitle.split(" ");
 
-          const newSubtitle = (
-                    <>
-                              {firstWord} <span className="text-primary">{secondWord} {thirdWord}</span> {restOfWords}
-                    </>
-          )
+          const newSubtitle = <>{words[0]} <span className="text-primary"> {words[1]} {words[2]}</span> {words.slice(3).join(" ")}</>
 
           return (
                     <div className="space-y-1 mb-5">
@@ -26,5 +17,5 @@ export default function Title({ title, subtitle }: TitleProps) {
                                         {newSubtitle}
                               </p>
                     </div>
-          )
+          );
 }

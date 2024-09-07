@@ -39,7 +39,7 @@ export default function Banner() {
                                                   <img src={BannerImg} alt="banner" className="w-full sm:w-1/2 mx-auto lg:w-full" onContextMenu={(e) => e.preventDefault()} />
                                         </div>
                               </div>
-                              <div className="mt-8 sm:mt-0">
+                              <div className="mt-8 sm:mt-8 lg:mt-0">
                                         <InfiniteMovingIcons
                                                   items={Config.sponsors}
                                                   direction="left"

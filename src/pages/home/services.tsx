@@ -89,7 +89,7 @@ export default function Services() {
                                                                                                               style={{
                                                                                                                         borderRadius: '24px',
                                                                                                               }}
-                                                                                                              className='pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 sm:w-[500px]'
+                                                                                                              className='pointer-events-auto relative flex h-auto w-full mx-2 flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 sm:w-[500px]'
                                                                                                     >
                                                                                                               <DialogImage
                                                                                                                         src={service.image}
@@ -116,7 +116,7 @@ export default function Services() {
                                                                                                                                                       From <span className="font-bold">${service.price}</span>
                                                                                                                                             </p>
                                                                                                                                   </div>
-                                                                                                                                  <div className="flex justify-end mt-4">
+                                                                                                                                  <div className="flex justify-end">
                                                                                                                                             <a
                                                                                                                                                       className={cn(buttonVariants({ className: "inline-flex" }))}
                                                                                                                                                       href='https://wa.me/+16622606515'
