@@ -77,7 +77,7 @@ export default function Contact() {
           )
 }
 
-const LabelInputContainer = ({
+export const LabelInputContainer = ({
           children,
           className,
 }: {

@@ -71,8 +71,8 @@ export default function Services() {
                                                                                                                         </DialogSubtitle>
                                                                                                               </div>
                                                                                                               <div className="space-y-1">
-                                                                                                                        <p className='font-bold text-zinc-700 dark:text-zinc-400'>
-                                                                                                                                  ${service.price}
+                                                                                                                        <p className='text-zinc-700 dark:text-zinc-400'>
+                                                                                                                                  From <span className="font-bold">${service.price}</span>
                                                                                                                         </p>
                                                                                                                         <button
                                                                                                                                   type='button'
@@ -113,13 +113,13 @@ export default function Services() {
                                                                                                                         >
                                                                                                                                   <div className='flex justify-between'>
                                                                                                                                             <p className='text-zinc-700 dark:text-zinc-400'>
-                                                                                                                                                      Price: <span className="font-bold">${service.price}</span>
+                                                                                                                                                      From <span className="font-bold">${service.price}</span>
                                                                                                                                             </p>
                                                                                                                                   </div>
                                                                                                                                   <div className="flex justify-end mt-4">
                                                                                                                                             <a
                                                                                                                                                       className={cn(buttonVariants({ className: "inline-flex" }))}
-                                                                                                                                                      href='https://wa.me/+17075748645'
+                                                                                                                                                      href='https://wa.me/+16622606515'
                                                                                                                                                       target='_blank'
                                                                                                                                                       rel='noopener noreferrer'
                                                                                                                                             >

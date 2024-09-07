@@ -1,13 +1,43 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Config } from "@/config";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { toast } from "@/hooks/use-toast";
+import { FormEvent } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 export default function Footer() {
+          const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.currentTarget);
+                    const data = Object.fromEntries(formData.entries());
+
+                    if (!data.subscribe) {
+                              return toast({
+                                        title: "Validation Error",
+                                        description: "Please enter a valid email address.",
+                                        variant: "destructive",
+                              });
+                    }
+
+                    try {
+                              toast({
+                                        title: "Subscribed!",
+                                        description: "You have successfully subscribed to our newsletter.",
+                              });
+                              e.currentTarget.reset();
+                    } catch (error) {
+                              console.error(error);
+                    }
+          }
+
+          const { pathname } = useLocation();
+          const LinkComponent = pathname === "/" ? ScrollLink : Link;
+
           return (
                     <footer id="footer" className="bg-gradient-to-tl from-primary to-primary/50 text-primary-foreground pt-10 mt-16 pb-3 overflow-x-hidden">
-                              <div className="max-w-7xl mx-auto px-5 lg:px-0 flex justify-between flex-col md:flex-row gap-[50px] md:gap-0">
-                                        <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
+                              <div className="max-w-7xl mx-auto px-5 lg:px-0 flex justify-between flex-col md:flex-row gap-5 md:gap-16">
+                                        <div className="flex gap-5 md:gap-8 lg:gap-16 flex-col md:flex-row">
                                                   <div className="space-y-1">
                                                             <div className="flex justify-center sm:justify-normal items-center gap-2">
                                                                       <img src={Config.logo} alt="logo" className="size-8 sm:size-9" onContextMenu={(e) => e.preventDefault()} />
@@ -23,71 +53,65 @@ export default function Footer() {
                                                             </p>
                                                   </div>
                                                   <div className="flex flex-col gap-3 shrink-0">
-                                                            <ScrollLink
-                                                                      to="contact"
-                                                                      spy={true}
-                                                                      smooth={true}
-                                                                      offset={-70}
-                                                                      duration={500}
+                                                            <LinkComponent
+                                                                      to={pathname === "/" ? "contact" : "/"}
+                                                                      spy={pathname === "/" ? true : undefined}
+                                                                      smooth={pathname === "/" ? true : undefined}
+                                                                      offset={pathname === "/" ? -70 : undefined}
+                                                                      duration={pathname === "/" ? 500 : undefined}
                                                                       className="font-oswald font-medium uppercase text-sm sm:hover:underline duration-300 cursor-pointer">
                                                                       Contact Us
-                                                            </ScrollLink>
-                                                            <ScrollLink
-                                                                      to="about"
-                                                                      spy={true}
-                                                                      smooth={true}
-                                                                      offset={-70}
-                                                                      duration={500}
+                                                            </LinkComponent>
+                                                            <LinkComponent
+                                                                      to={pathname === "/" ? "about" : "/"}
+                                                                      spy={pathname === "/" ? true : undefined}
+                                                                      smooth={pathname === "/" ? true : undefined}
+                                                                      offset={pathname === "/" ? -70 : undefined}
+                                                                      duration={pathname === "/" ? 500 : undefined}
                                                                       className="font-oswald font-medium uppercase text-sm sm:hover:underline duration-300 cursor-pointer">
                                                                       About Us
-                                                            </ScrollLink>
-                                                            <ScrollLink
-                                                                      to="services"
-                                                                      spy={true}
-                                                                      smooth={true}
-                                                                      offset={-70}
-                                                                      duration={500}
+                                                            </LinkComponent>
+                                                            <LinkComponent
+                                                                      to={pathname === "/" ? "services" : "/"}
+                                                                      spy={pathname === "/" ? true : undefined}
+                                                                      smooth={pathname === "/" ? true : undefined}
+                                                                      offset={pathname === "/" ? -70 : undefined}
+                                                                      duration={pathname === "/" ? 500 : undefined}
                                                                       className="font-oswald font-medium uppercase text-sm sm:hover:underline duration-300 cursor-pointer">
                                                                       Services
-                                                            </ScrollLink>
-                                                            <ScrollLink
-                                                                      to="feedback"
-                                                                      spy={true}
-                                                                      smooth={true}
-                                                                      offset={-70}
-                                                                      duration={500}
+                                                            </LinkComponent>
+                                                            <LinkComponent
+                                                                      to={pathname === "/" ? "feedback" : "/"}
+                                                                      spy={pathname === "/" ? true : undefined}
+                                                                      smooth={pathname === "/" ? true : undefined}
+                                                                      offset={pathname === "/" ? -70 : undefined}
+                                                                      duration={pathname === "/" ? 500 : undefined}
                                                                       className="font-oswald font-medium uppercase text-sm sm:hover:underline duration-300 cursor-pointer">
                                                                       Feedback
-                                                            </ScrollLink>
+                                                            </LinkComponent>
                                                   </div>
                                         </div>
-                                        <div className="flex gap-4 justify-center md:justify-start">
-                                                  <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-primary duration-300 cursor-pointer">
-                                                            <FaFacebookF size={20} />
-                                                  </a>
-                                                  <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-primary duration-300 cursor-pointer">
-                                                            <FaTwitter size={20} />
-                                                  </a>
-                                                  <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-primary duration-300 cursor-pointer">
-                                                            <FaYoutube size={20} />
-                                                  </a>
-                                                  <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-primary duration-300 cursor-pointer">
-                                                            <FaInstagram size={20} />
-                                                  </a>
-                                        </div>
+                                        <form onSubmit={handleSubmit} className="flex justify-center w-full sm:w-1/3">
+                                                  <div className="w-full space-y-2">
+                                                            <div className="space-y-2">
+                                                                      <label htmlFor="subscribe" className="text-sm font-medium leading-none">Subscribe to our newsletter</label>
+                                                                      <Input id="subscribe" type="email" name="subscribe" placeholder="Email Address" className="w-full" />
+                                                            </div>
+                                                            <Button type="submit" className="w-full">
+                                                                      Subscribe &rarr;
+                                                            </Button>
+                                                  </div>
+                                        </form>
                               </div>
                               <div className="max-w-7xl mx-auto px-5 lg:px-0 flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0">
                                         <div className="text-[12px] text-center md:text-left">
                                                   © {new Date().getFullYear()} <span className="font-medium">{Config.title}</span>. All rights reserved.
                                         </div>
                                         <div className="flex gap-2 md:gap-5 text-center md:text-left flex-wrap justify-center">
-                                                  <Link to="/" className="text-[12px] sm:hover:underline duration-300">
-                                                            Terms of Sale
+                                                  <Link to="/terms-and-conditions" className="text-[12px] sm:hover:underline duration-300">
+                                                            Terms & Conditions
                                                   </Link>
-                                                  <Link to="/" className="text-[12px] sm:hover:underline duration-300">
-                                                            Terms of Use
-                                                  </Link>
-                                                  <Link to="/" className="text-[12px] sm:hover:underline duration-300">
+                                                  <Link to="/privacy-policy" className="text-[12px] sm:hover:underline duration-300">
                                                             Privacy Policy
                                                   </Link>
                                         </div>

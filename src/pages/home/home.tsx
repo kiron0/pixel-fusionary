@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/scroll-to-top";
 import About from "./about";
 import Banner from "./banner";
 import Contact from "./contact";
@@ -16,6 +17,7 @@ export default function Home() {
                               <Feedback />
                               <Contact />
                               <Footer />
+                              <ScrollToTop />
                     </>
           )
 }
