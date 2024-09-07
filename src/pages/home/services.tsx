@@ -64,23 +64,25 @@ export default function Services() {
                                                                                                     <div className='flex flex-grow flex-row items-end justify-between p-2'>
                                                                                                               <div className="space-y-1">
                                                                                                                         <DialogTitle className='text-zinc-950 dark:text-zinc-50 font-semibold'>
-                                                                                                                                  {service.title.length > 30 ? service.title.slice(0, 30) + '...' : service.title}
+                                                                                                                                  {service.title.length > 20 ? service.title.slice(0, 20) + '...' : service.title}
                                                                                                                         </DialogTitle>
                                                                                                                         <DialogSubtitle className='text-zinc-700 dark:text-zinc-400'>
-                                                                                                                                  {service.subtitle.length > 30 ? service.subtitle.slice(0, 30) + '...' : service.subtitle}
+                                                                                                                                  {service.subtitle.length > 25 ? service.subtitle.slice(0, 25) + '...' : service.subtitle}
                                                                                                                         </DialogSubtitle>
                                                                                                               </div>
                                                                                                               <div className="space-y-1">
                                                                                                                         <p className='text-zinc-700 dark:text-zinc-400'>
                                                                                                                                   From <span className="font-bold">${service.price}</span>
                                                                                                                         </p>
-                                                                                                                        <button
-                                                                                                                                  type='button'
-                                                                                                                                  className='relative ml-1 flex h-6 w-6 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:bg-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-500'
-                                                                                                                                  aria-label='Open dialog'
-                                                                                                                        >
-                                                                                                                                  <PlusIcon size={12} />
-                                                                                                                        </button>
+                                                                                                                        <div className="flex justify-end">
+                                                                                                                                  <button
+                                                                                                                                            type='button'
+                                                                                                                                            className='relative ml-1 flex h-6 w-6 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:bg-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-500'
+                                                                                                                                            aria-label='Open dialog'
+                                                                                                                                  >
+                                                                                                                                            <PlusIcon size={12} />
+                                                                                                                                  </button>
+                                                                                                                        </div>
                                                                                                               </div>
                                                                                                     </div>
                                                                                           </DialogTrigger>
